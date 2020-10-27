@@ -1,0 +1,16 @@
+POST http://localhost:8080/api/v1/userAdminEntity
+Content-Type: application/json
+Accept: application/json
+
+{
+  "user_id": "TEST-2",
+  "user_name": "admin",
+  "user_password": "admin123",
+  "userEmail": "admin@admin.com",
+  "isActive": 1,
+  "userUrl": "admin.com"
+}
+###
+
+GET http://localhost:8080//api/v2/getUserAdmin/TEST-1
+Content-Type: application/json
