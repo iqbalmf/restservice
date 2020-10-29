@@ -21,7 +21,7 @@ public class UserAdminController {
     UserAdminService userAdminService;
 
     @PostMapping(
-            value = "/userAdmin",
+            value = "/userAdmin/signUp",
             produces = "application/json",
             consumes = "application/json"
     )

@@ -4,40 +4,45 @@
 
 Request:
 - Method: POST
-- Endpoint: `/api/v1/user`
+- Endpoint: `/api/v1/userAdmin/signup`
 - Header: 
     - Content-Type: application/json
     - Accept: application/json
 - Body: 
 ```json
 {
-  "name": "string",
-  "password": "string",
-  "email": "string",
-  "idRole": "Integer"
+  "userId": "String, Unique",
+  "userName": "string",
+  "userPass": "string",
+  "userMail": "string",
+  "userRole": "String",
+  "isActive": "Boolean",
+  "userUrl": "String"
 }
 ```
 Response:
 ```json
 {
-"status": "integer",
-"info": "string",
-"content": {
-      "id": "integer",
-      "userid":"long, unique",
-      "name": "string",
-      "password": "string",
-      "email": "string",
-      "isActive": "boolean",
-      "urlActivate": "string",
-      "createdAt": "date"
+    "status": "integer",
+    "info": "string",
+    "content": {
+        "id": "Integer",
+        "userId": "String, Unique",
+        "userName": "string",
+        "userPass": "string",
+        "userMail": "string",
+        "userRole": "String",
+        "isActive": "Boolean",
+        "userUrl": "String",
+        "createdAt": "Date",
+        "updatedAt": "Date"
     }
 }
 ```
 ## GET LIST USER
 Request:
 - Method: GET
-- Endpoint: `/api/v1/user/`
+- Endpoint: `/api/v1/userAdmin/`
 - Header: 
     - Content-Type: application/json
     
@@ -49,24 +54,28 @@ Response :
   "content": 
    [   
         {
-              "id": "integer",
-              "userid":"long, unique",
-              "name": "string",
-              "password": "string",
-              "email": "string",
-              "isActive": "boolean",
-              "urlActivate": "string",
-              "createdAt": "date"
+              "id": "Integer",
+                      "userId": "String, Unique",
+                      "userName": "string",
+                      "userPass": "string",
+                      "userMail": "string",
+                      "userRole": "String",
+                      "isActive": "Boolean",
+                      "userUrl": "String",
+                      "createdAt": "Date",
+                      "updatedAt": "Date"
         },
         {
-              "id": "integer",
-              "userid":"long, unique",
-              "name": "string",
-              "password": "string",
-              "email": "string",
-              "isActive": "boolean",
-              "urlActivate": "string",
-              "createdAt": "date"
+              "id": "Integer",
+                      "userId": "String, Unique",
+                      "userName": "string",
+                      "userPass": "string",
+                      "userMail": "string",
+                      "userRole": "String",
+                      "isActive": "Boolean",
+                      "userUrl": "String",
+                      "createdAt": "Date",
+                      "updatedAt": "Date"
         }
    ]
 }
@@ -74,21 +83,21 @@ Response :
 ## UPDATE USER
 Request:
 - Method: PUT
-- Endpoint: `/api/v1/user/{id_user}`
+- Endpoint: `/api/v1/userAdmin/{id}`
 - Header: 
     - Content-Type: application/json
     - Accept: application/json
 - Body: 
 ```json
 {
-      "id": "integer",
-      "userid":"long, unique",
-      "name": "string",
-      "password": "string",
-      "email": "string",
-      "isActive": "boolean",
-      "urlActivate": "string"
-    }
+  "userId": "String, Unique",
+  "userName": "string",
+  "userPass": "string",
+  "userMail": "string",
+  "userRole": "String",
+  "isActive": "Boolean",
+  "userUrl": "String"
+}
 ```
 Response:
 ```json
@@ -96,22 +105,23 @@ Response:
   "status": "integer",
   "info": "string",
   "content": {
-        "id": "integer",
-        "userid":"long, unique",
-        "name": "string",
-        "password": "string",
-        "email": "string",
-        "isActive": "boolean",
-        "urlActivate": "string",
-        "createdAt": "date",
-        "updatedAt": "date"
+        "id": "Integer",
+                "userId": "String, Unique",
+                "userName": "string",
+                "userPass": "string",
+                "userMail": "string",
+                "userRole": "String",
+                "isActive": "Boolean",
+                "userUrl": "String",
+                "createdAt": "Date",
+                "updatedAt": "Date"
       }
 }
 ```
 ## DELETE USER
 Request:
 - Method: DELETE
-- Endpoint: `/api/v1/user/{id_user}`
+- Endpoint: `/api/v1/userAdmin/{id}`
 - Header: 
     - Content-Type: application/json
     
@@ -119,7 +129,8 @@ Response:
 ```json
 {
   "status": "integer",
-  "info": "string"
+  "info": "string",
+  "content": null
 }
 ```
 ## Create Acara
@@ -132,13 +143,14 @@ Request:
 - Body: 
 ```json
 {
-  "title": "string",
-  "content": "string",
-  "author": "string",
+  "acaraId": "String, Unique",
+  "acaraTitle": "string",
+  "acaraContent": "string",
+  "acaraAuthor": "string",
   "location": "string",
   "startDate": "date",
   "endDate": "date",
-  "imageThumbnail": "string",
+  "thumbnail": "string",
   "category": "string",
   "isShowing": "boolean"
 }
@@ -149,18 +161,19 @@ Response:
   "status": "integer",
   "info": "string",
   "content": {
-      "id": "integer",
-      "title": "string",
-      "content": "string",
-      "author": "string",
-      "location": "string",
-      "startDate": "date",
-      "endDate": "date",
-      "imageThumbnail": "string",
-      "category": "string",
-      "isShowing": "boolean",
-      "createdAt": "Date",
-      "updatedAt": "Date"
+      "id": "long",
+        "acaraId": "String, Unique",
+        "acaraTitle": "string",
+        "acaraContent": "string",
+        "acaraAuthor": "string",
+        "location": "string",
+        "startDate": "date",
+        "endDate": "date",
+        "thumbnail": "string",
+        "category": "string",
+        "isShowing": "boolean",
+      "createdAt": "date",
+      "updatedAt": "date"
     }
 }
 ```
@@ -178,32 +191,34 @@ Response:
   "content": 
    [   
         {
-          "id": "integer",
-          "title": "string",
-          "content": "string",
-          "author": "string",
-          "location": "string",
-          "startDate": "date",
-          "endDate": "date",
-          "imageThumbnail": "string",
-          "category": "string",
-          "isShowing": "boolean",
-          "createdAt": "Date",
-          "updatedAt": "Date"
+                "id": "long",
+                  "acaraId": "String, Unique",
+                  "acaraTitle": "string",
+                  "acaraContent": "string",
+                  "acaraAuthor": "string",
+                  "location": "string",
+                  "startDate": "date",
+                  "endDate": "date",
+                  "thumbnail": "string",
+                  "category": "string",
+                  "isShowing": "boolean",
+                "createdAt": "date",
+                "updatedAt": "date"
         },
         {
-          "id": "integer",
-          "title": "string",
-          "content": "string",
-          "author": "string",
-          "location": "string",
-          "startDate": "date",
-          "endDate": "date",
-          "imageThumbnail": "string",
-          "category": "string",
-          "isShowing": "boolean",
-          "createdAt": "Date",
-          "updatedAt": "Date"
+                "id": "long",
+                  "acaraId": "String, Unique",
+                  "acaraTitle": "string",
+                  "acaraContent": "string",
+                  "acaraAuthor": "string",
+                  "location": "string",
+                  "startDate": "date",
+                  "endDate": "date",
+                  "thumbnail": "string",
+                  "category": "string",
+                  "isShowing": "boolean",
+                "createdAt": "date",
+                "updatedAt": "date"
         }
    ]
 }
@@ -211,7 +226,7 @@ Response:
 ## Get Acara Detail
 Request:
 - Method: GET
-- Endpoint: `/api/v1/acara/{id_acara}`
+- Endpoint: `/api/v1/acara/{id}`
 - Header: 
     - Content-Type: application/json
 Response:
@@ -221,38 +236,40 @@ Response:
   "info": "string",
   "content": 
     {
-      "id": "integer",
-      "title": "string",
-      "content": "string",
-      "author": "string",
-      "location": "string",
-      "startDate": "date",
-      "endDate": "date",
-      "imageThumbnail": "string",
-      "category": "string",
-      "isShowing": "boolean",
-      "createdAt": "Date",
-      "updatedAt": "Date"
+            "id": "long",
+              "acaraId": "String, Unique",
+              "acaraTitle": "string",
+              "acaraContent": "string",
+              "acaraAuthor": "string",
+              "location": "string",
+              "startDate": "date",
+              "endDate": "date",
+              "thumbnail": "string",
+              "category": "string",
+              "isShowing": "boolean",
+            "createdAt": "date",
+            "updatedAt": "date"
     }
 }
 ```
 ## Update Acara
 Request:
 - Method: PUT
-- Endpoint: `/api/v1/acara/{id_acara}`
+- Endpoint: `/api/v1/acara/{id}`
 - Header: 
     - Content-Type: application/json
     - Accept: application/json
 - Body: 
 ```json
 {
-  "title": "string",
-  "content": "string",
-  "author": "string",
+  "acaraId": "String, Unique",
+  "acaraTitle": "string",
+  "acaraContent": "string",
+  "acaraAuthor": "string",
   "location": "string",
   "startDate": "date",
   "endDate": "date",
-  "imageThumbnail": "string",
+  "thumbnail": "string",
   "category": "string",
   "isShowing": "boolean"
 }
@@ -264,25 +281,26 @@ Response:
   "info": "string",
   "content": 
     {
-      "id": "integer",
-      "title": "string",
-      "content": "string",
-      "author": "string",
-      "location": "string",
-      "startDate": "date",
-      "endDate": "date",
-      "imageThumbnail": "string",
-      "category": "string",
-      "isShowing": "boolean",
-      "createdAt": "Date",
-      "updatedAt": "Date"
+           "id": "long",
+             "acaraId": "String, Unique",
+             "acaraTitle": "string",
+             "acaraContent": "string",
+             "acaraAuthor": "string",
+             "location": "string",
+             "startDate": "date",
+             "endDate": "date",
+             "thumbnail": "string",
+             "category": "string",
+             "isShowing": "boolean",
+           "createdAt": "date",
+           "updatedAt": "date"
     }
 }
 ```
 ## Delete Acara
 Request:
 - Method: DELETE
-- Endpoint: `/api/v1/acara/{id_acara}`
+- Endpoint: `/api/v1/acara/{id}`
 - Header: 
     - Content-Type: application/json
     
@@ -290,7 +308,8 @@ Response:
 ```json
 {
   "status": "integer",
-  "info": "string"
+  "info": "string",
+  "content": null
 }
 ```
 ## Create Article 
@@ -303,12 +322,13 @@ Request:
 - Body: 
 ```json
 {
-  "title": "string",
-  "content": "string",
-  "author": "string",
-  "imageThumbnail": "string",
-  "category": "string",
-  "isShowing": "boolean"
+  "articleId": "String, unique",
+  "articleTitle": "string",
+  "articleContent": "string",
+  "articleAuthor": "string",
+  "articleThumbnail": "string",
+  "articleCategory": "string",
+  "isShowing": "boolean",
 }
 ```
 Response:
@@ -317,15 +337,16 @@ Response:
   "status": "integer",
   "info": "string",
   "content": {
-      "id": "integer",
-      "title": "string",
-      "content": "string",
-      "author": "string",
-      "imageThumbnail": "string",
-      "category": "string",
-      "isShowing": "boolean",
-      "createdAt": "Date",
-      "updatedAt": "Date"
+        "id": "long",
+        "articleId": "String, unique",
+        "articleTitle": "string",
+        "articleContent": "string",
+        "articleAuthor": "string",
+        "articleThumbnail": "string",
+        "articleCategory": "string",
+        "isShowing": "boolean",
+        "createdAt": "date",
+        "updatedAt": "date"
     }
 }
 ```
@@ -343,26 +364,28 @@ Response:
   "content": 
    [   
         {
-         "id": "integer",
-         "title": "string",
-         "content": "string",
-         "author": "string",
-         "imageThumbnail": "string",
-         "category": "string",
-         "isShowing": "boolean",
-         "createdAt": "Date",
-         "updatedAt": "Date"
+        "id": "long",
+        "articleId": "String, unique",
+        "articleTitle": "string",
+        "articleContent": "string",
+        "articleAuthor": "string",
+        "articleThumbnail": "string",
+        "articleCategory": "string",
+        "isShowing": "boolean",
+        "createdAt": "date",
+        "updatedAt": "date"
         },
         {
-         "id": "integer",
-         "title": "string",
-         "content": "string",
-         "author": "string",
-         "imageThumbnail": "string",
-         "category": "string",
-         "isShowing": "boolean",
-         "createdAt": "Date",
-         "updatedAt": "Date"
+        "id": "long",
+        "articleId": "String, unique",
+        "articleTitle": "string",
+        "articleContent": "string",
+        "articleAuthor": "string",
+        "articleThumbnail": "string",
+        "articleCategory": "string",
+        "isShowing": "boolean",
+        "createdAt": "date",
+        "updatedAt": "date"
          }
    ]
 }
@@ -370,7 +393,7 @@ Response:
 ## Get Article Detail
 Request:
 - Method: GET
-- Endpoint: `/api/v1/article/{id_article}`
+- Endpoint: `/api/v1/article/{id}`
 - Header: 
     - Content-Type: application/json
 Response:
@@ -380,40 +403,36 @@ Response:
   "info": "string",
   "content": 
     {
-      "id": "integer",
-      "title": "string",
-      "content": "string",
-      "author": "string",
-      "location": "string",
-      "startDate": "date",
-      "endDate": "date",
-      "imageThumbnail": "string",
-      "category": "string",
-      "isShowing": "boolean",
-      "createdAt": "Date",
-      "updatedAt": "Date"
+        "id": "long",
+        "articleId": "String, unique",
+        "articleTitle": "string",
+        "articleContent": "string",
+        "articleAuthor": "string",
+        "articleThumbnail": "string",
+        "articleCategory": "string",
+        "isShowing": "boolean",
+        "createdAt": "date",
+        "updatedAt": "date"
     }
 }
 ```
 ## Update Acara
 Request:
 - Method: PUT
-- Endpoint: `/api/v1/acara/{id_acara}`
+- Endpoint: `/api/v1/acara/{id}`
 - Header: 
     - Content-Type: application/json
     - Accept: application/json
 - Body: 
 ```json
 {
-  "title": "string",
-  "content": "string",
-  "author": "string",
-  "location": "string",
-  "startDate": "date",
-  "endDate": "date",
-  "imageThumbnail": "string",
-  "category": "string",
-  "isShowing": "boolean"
+  "articleId": "String, unique",
+  "articleTitle": "string",
+  "articleContent": "string",
+  "articleAuthor": "string",
+  "articleThumbnail": "string",
+  "articleCategory": "string",
+  "isShowing": "boolean",
 }
 ```
 Response:
@@ -423,25 +442,23 @@ Response:
   "info": "string",
   "content": 
     {
-      "id": "integer",
-      "title": "string",
-      "content": "string",
-      "author": "string",
-      "location": "string",
-      "startDate": "date",
-      "endDate": "date",
-      "imageThumbnail": "string",
-      "category": "string",
-      "isShowing": "boolean",
-      "createdAt": "Date",
-      "updatedAt": "Date"
+        "id": "long",
+        "articleId": "String, unique",
+        "articleTitle": "string",
+        "articleContent": "string",
+        "articleAuthor": "string",
+        "articleThumbnail": "string",
+        "articleCategory": "string",
+        "isShowing": "boolean",
+        "createdAt": "date",
+        "updatedAt": "date"
     }
 }
 ```
 ## Delete Acara
 Request:
 - Method: DELETE
-- Endpoint: `/api/v1/acara/{id_acara}`
+- Endpoint: `/api/v1/acara/{id}`
 - Header: 
     - Content-Type: application/json
     
@@ -449,7 +466,8 @@ Response:
 ```json
 {
   "status": "integer",
-  "info": "string"
+  "info": "string",
+  "content": null
 }
 ```
 ## Create Program Study

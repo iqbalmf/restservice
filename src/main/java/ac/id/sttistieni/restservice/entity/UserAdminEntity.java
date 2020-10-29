@@ -20,44 +20,44 @@ public class UserAdminEntity implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "id")
-    private Long id;
+    Long id;
 
     @NotBlank
     @Column(name = "user_id")
-    private String userId;
+    String userId;
 
     @NotBlank
     @Column(name = "user_name")
-    private String userName;
+    String userName;
 
     @NotBlank
     @Column(name = "user_password")
-    private String userPass;
+    String userPass;
 
     @NotBlank
     @Column(name = "user_email")
-    private String userMail;
+    String userMail;
 
     @NotBlank
     @Column(name = "user_role")
-    private String userRole;
+    String userRole;
 
     @NotNull
     @Column(name = "user_isactive")
-    private Boolean isActive;
+    Boolean isActive;
 
     @Column(name = "user_urlactive")
-    private String userUrl;
+    String userUrl;
 
     @Temporal(TemporalType.TIMESTAMP)
     @CreatedDate
     @Column(name = "user_created_tm")
-    private Date createdAt;
+    Date createdAt;
 
     @Temporal(TemporalType.TIMESTAMP)
     @LastModifiedDate
     @Column(name = "user_updated_tm")
-    private Date updatedAt;
+    Date updatedAt;
 
     public UserAdminEntity() {
     }
