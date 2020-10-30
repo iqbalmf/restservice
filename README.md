@@ -328,7 +328,7 @@ Request:
   "articleAuthor": "string",
   "articleThumbnail": "string",
   "articleCategory": "string",
-  "isShowing": "boolean",
+  "isShowing": "boolean"
 }
 ```
 Response:
@@ -416,7 +416,7 @@ Response:
     }
 }
 ```
-## Update Acara
+## Update Article
 Request:
 - Method: PUT
 - Endpoint: `/api/v1/acara/{id}`
@@ -432,7 +432,7 @@ Request:
   "articleAuthor": "string",
   "articleThumbnail": "string",
   "articleCategory": "string",
-  "isShowing": "boolean",
+  "isShowing": "boolean"
 }
 ```
 Response:
@@ -455,7 +455,7 @@ Response:
     }
 }
 ```
-## Delete Acara
+## Delete Article
 Request:
 - Method: DELETE
 - Endpoint: `/api/v1/acara/{id}`
@@ -477,5 +477,162 @@ Response:
 ## Create Gallery
 
 ## Create Calon Mahasiswa Baru
-
+Request:
+- Method: POST
+- Endpoint: `/api/v1/pmb/register`
+- Header: 
+    - Content-Type: application/json
+    - Accept: application/json
+- Body: 
+```json
+{
+    "username": "String, Unique",
+    "password": "String, Unique",
+    "email": "string",
+    "fullname": "string",
+    "kelamin": "string",
+    "tempatLahir": "string",
+    "tglLahir": "date",
+    "ibuKandung": "string",
+    "alamat": "string",
+    "kodepos": "string",
+    "notlp": "string",
+    "lulusan": "strign",
+    "asalLulusan": "string",
+    "asalJurusan": "string",
+    "asalAlamatLulusan": "string",
+    "isKerja": "Boolean",
+    "kantorInstansi": "string",
+    "kantorJabatan": "string",
+    "kantorAlamat": "string",
+    "kantorNotlp": "string",
+    "biayaRencana": "string",
+    "biayaSPB": "string",
+    "biayaSPP": "string",
+    "sumberInfo": "string",
+    "pWawancara": "string",
+    "pmbJurusan": "string",
+    "pmbPerguruanTinggi": "string",
+    "isLunas": "Boolean"
+}
+```
+Response:
+```json
+{
+  "status": "integer",
+  "info": "string",
+  "content": {
+    "id": "Long",
+    "id_user": "string",
+    "username": "String, Unique",
+    "password": "String, Unique",
+    "email": "string",
+    "fullname": "string",
+    "kelamin": "string",
+    "tempatLahir": "string",
+    "tglLahir": "date",
+    "ibuKandung": "string",
+    "alamat": "string",
+    "kodepos": "string",
+    "notlp": "string",
+    "lulusan": "strign",
+    "asalLulusan": "string",
+    "asalJurusan": "string",
+    "asalAlamatLulusan": "string",
+    "isKerja": "Boolean",
+    "kantorInstansi": "string",
+    "kantorJabatan": "string",
+    "kantorAlamat": "string",
+    "kantorNotlp": "string",
+    "biayaRencana": "string",
+    "biayaSPB": "string",
+    "biayaSPP": "string",
+    "sumberInfo": "string",
+    "pWawancara": "string",
+    "pmbJurusan": "string",
+    "pmbPerguruanTinggi": "string",
+    "isLunas": "Boolean"
+  }
+}
+```
+## GET LIST USER
+Request:
+- Method: GET
+- Endpoint: `/api/v1/pmb/`
+- Header: 
+    - Content-Type: application/json
+- Body: 
+```json
+{
+  "status": "integer",
+  "info": "string",
+  "content": 
+   [   
+       {
+           "id": "Long",
+           "id_user": "string",
+           "username": "String, Unique",
+           "password": "String, Unique",
+           "email": "string",
+           "fullname": "string",
+           "kelamin": "string",
+           "tempatLahir": "string",
+           "tglLahir": "date",
+           "ibuKandung": "string",
+           "alamat": "string",
+           "kodepos": "string",
+           "notlp": "string",
+           "lulusan": "strign",
+           "asalLulusan": "string",
+           "asalJurusan": "string",
+           "asalAlamatLulusan": "string",
+           "isKerja": "Boolean",
+           "kantorInstansi": "string",
+           "kantorJabatan": "string",
+           "kantorAlamat": "string",
+           "kantorNotlp": "string",
+           "biayaRencana": "string",
+           "biayaSPB": "string",
+           "biayaSPP": "string",
+           "sumberInfo": "string",
+           "pWawancara": "string",
+           "pmbJurusan": "string",
+           "pmbPerguruanTinggi": "string",
+           "isLunas": "Boolean"
+       },
+       {
+           "id": "Long",
+           "id_user": "string",
+           "username": "String, Unique",
+           "password": "String, Unique",
+           "email": "string",
+           "fullname": "string",
+           "kelamin": "string",
+           "tempatLahir": "string",
+           "tglLahir": "date",
+           "ibuKandung": "string",
+           "alamat": "string",
+           "kodepos": "string",
+           "notlp": "string",
+           "lulusan": "strign",
+           "asalLulusan": "string",
+           "asalJurusan": "string",
+           "asalAlamatLulusan": "string",
+           "isKerja": "Boolean",
+           "kantorInstansi": "string",
+           "kantorJabatan": "string",
+           "kantorAlamat": "string",
+           "kantorNotlp": "string",
+           "biayaRencana": "string",
+           "biayaSPB": "string",
+           "biayaSPP": "string",
+           "sumberInfo": "string",
+           "pWawancara": "string",
+           "pmbJurusan": "string",
+           "pmbPerguruanTinggi": "string",
+           "isLunas": "Boolean"
+       }
+   ]
+}
+```
 ## Create Pengunjung Web
