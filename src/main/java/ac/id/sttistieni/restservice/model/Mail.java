@@ -6,6 +6,19 @@ public class Mail implements Serializable {
     private String subject;
     private String recipient;
     private String body;
+    private String contentType;
+
+    public Mail() {
+        contentType = "text/plain";
+    }
+
+    public String getContentType() {
+        return contentType;
+    }
+
+    public void setContentType(String contentType) {
+        this.contentType = contentType;
+    }
 
     public String getSubject() {
         return subject;

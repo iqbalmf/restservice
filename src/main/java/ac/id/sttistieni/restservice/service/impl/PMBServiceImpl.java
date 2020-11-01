@@ -55,7 +55,10 @@ public class PMBServiceImpl implements PMBService {
     @Override
     public PmbResponse loginMhs(PmbLoginReq pmbLoginReq) {
         validationUtil.validate(pmbLoginReq);
-
+        MahasiswaEntity mahasiswaEntity = pmbRepository.findByUsername(pmbLoginReq.getUsername(), pmbLoginReq.getPassword());
+        if (mahasiswaEntity != null){
+            return conver2Response(mahasiswaEntity, new PmbResponse());
+        }
         return null;
     }
 

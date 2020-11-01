@@ -1,6 +1,8 @@
 package ac.id.sttistieni.restservice.model.pmb;
 
-public class PmbLoginReq {
+import java.io.Serializable;
+
+public class PmbLoginReq implements Serializable {
     private String username;
     private String password;
 

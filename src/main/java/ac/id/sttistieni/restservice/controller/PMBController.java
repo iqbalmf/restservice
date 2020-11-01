@@ -34,9 +34,12 @@ public class PMBController {
     }
 
     @PostMapping("/login")
-    public WebResponse<PmbResponse> loginMhs(@Valid @RequestBody PmbLoginReq pmbLoginReq){
-        PmbResponse pmbResponse;
-        return new WebResponse<>(200, "OK", null);
+    public WebResponse<PmbResponse> loginMhs(@Valid @RequestBody PmbLoginReq username){
+        PmbResponse pmbResponse = pmbService.loginMhs(username);
+        if (pmbResponse == null){
+            return new WebResponse<>(404, "NOT FOUND", null);
+        }
+        return new WebResponse<>(200, "OK", pmbResponse);
     }
 
     @GetMapping("/")
